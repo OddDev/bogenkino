@@ -120,6 +120,7 @@ body {
           border: none;
           width: 100%;
           border-bottom: solid 4px #ef476f;
+          background: transparent;
           font-family: "Comfortaa", cursive;
           margin-bottom: 1em;
           margin-top: 1em;
