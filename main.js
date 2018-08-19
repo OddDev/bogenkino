@@ -41,7 +41,8 @@ function gotStream(stream) {
 function setVideo() {
     var options = {
         // get the digits from the URL representing the ID
-        id: videoinput.value.match(/(\d)\w+/g)
+        id: videoinput.value.match(/(\d)\w+/g),
+        loop: true
     };
     var player = new Vimeo.Player('video', options);
     player.on('play', function() {
