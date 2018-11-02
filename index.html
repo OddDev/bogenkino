@@ -39,17 +39,37 @@
           </div>
         </div>
         <div class="step fix-max-width">
+          <div class="video-concept-buttons">
+              <button id="vimeo-button" class="video-concept-button" onclick="onVideoConceptChange(event)">
+                Vimeo
+              </button>
+              <button id="file-button" class="video-concept-button disabled" onclick="onVideoConceptChange(event)">
+                File Upload
+              </button>
+          </div>
+          <div id="vimeo-concept" class="concept">
             <label>
               The <i class="fab fa-vimeo-v"></i>ideo to play
               <input id="videoinput" placeholder="URL or ID of vimeo clip" type="text">
             </label>
-          <div class="help-text left">
-            "Provide the URL or the ID of the Vimeo-Video you want to shoot at."
+            <div class="help-text left">
+              "Provide the URL or the ID of the Vimeo-Video you want to shoot at."
+            </div>
+          </div>
+          <div id="file-concept" class="concept disabled">
+            <label>
+              The offline video to play
+              <input type="file">
+            </label>
+            <div class="help-text left">
+              "Upload a video you want to shoot at from your local hard drive."
+            </div>
           </div>
         </div>
         <button class="big-button" onclick="setVideo()">Start</button>
       </div>
-      <div id="video"></div>
+      <div id="vimeo-video" class="video"></div>
+      <video controls loop id="html-video" class="video"></video>
       <div class="footer">
         <div class="imprint">
             Imprint/Impressum: Kai Klostermann Gartenstraße 4 74549 Wolpertshausen bogenkino@fastmail.de

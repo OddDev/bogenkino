@@ -16,8 +16,19 @@ body {
         text-align: center;
     }
     
-#video {
+.video {
     margin-top: 2em;
+}
+
+.video#html-video[src] {
+  display: block;
+  max-width: 100%;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+.video#html-video {
+  display: none;
 }
 
     .imprint {
@@ -91,12 +102,17 @@ body {
       align-items: center; }
       .wrapper .content a,
       .wrapper .content button {
-        margin-top: 2em;
         background-color: #06d6a0;
         padding: 0.5em;
         color: #fffcf9;
         cursor: pointer;
         border-radius: 5px; }
+      .wrapper .content button.disabled {
+        opacity: 0.3;
+      }
+      .wrapper .content button.disabled:hover {
+        opacity: 0.7;
+      }
       .wrapper .content button {
         border: none;
         font-family: "Comfortaa", cursive;
@@ -114,6 +130,19 @@ body {
         border-radius: 2px;
         padding: 30px;
         margin-bottom: 2em; }
+        .wrapper .content .step .concept.disabled {
+          display: none; 
+        }
+        .wrapper .content .step .concept [type="file"] {
+          margin-top: 1em;
+          margin-bottom: 1em;
+          background: transparent;
+          font-size: 1.2em;
+          font-family: "Comfortaa", cursive;
+        }
+        .wrapper .content .step .video-concept-buttons {
+          margin-bottom: 1em;
+        }
         .wrapper .content .step.fix-max-width {
           max-width: 280px; }
         .wrapper .content .step [type="text"] {
