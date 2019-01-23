@@ -26,6 +26,8 @@ function createAudioMeter(audioContext,clipLevel,averaging,clipLag) {
 	return processor;
 }
 function volumeAudioProcess( event ) {
+	document.querySelector('.step#enable-microphone').style.display = 'none';
+	document.querySelector('.step#volume-bar').style.display = 'block';
 	var buf = event.inputBuffer.getChannelData(0);
     var bufLength = buf.length;
 	var sum = 0;

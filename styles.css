@@ -20,6 +20,10 @@ body {
     margin-top: 2em;
 }
 
+.step#volume-bar {
+  display: none;
+}
+
 .video#html-video[src] {
   display: block;
   max-width: 100%;

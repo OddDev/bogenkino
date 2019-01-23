@@ -21,7 +21,21 @@
       </div>
       <div class="content">
         <!-- <a>How it works</a> -->
-        <div class="step">
+        <div class="step fix-max-width" id="enable-microphone">
+          <div>
+            <label>
+                <i class="fas fa-microphone"></i>
+                Start recording
+            </label>
+            <button onclick="chromeMicPermission()">
+              Enable Microphone
+            </button>
+          </div>
+          <div class="help-text right">
+              "If you see still see this button after you've allowed mic access in your browser, <span class="highlight-text">press it</span>."
+            </div>
+        </div>
+        <div class="step" id="volume-bar">
           <div class="indicator">
             <label>
                 <i class="fas fa-microphone"></i>

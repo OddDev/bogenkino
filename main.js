@@ -33,6 +33,13 @@ window.onload = function() {
     .then(gotStream)
     .catch(didntGetStream);
 }
+
+function chromeMicPermission() {
+    audioContext.resume().then(() => {
+        console.log('Playback resumed successfully');
+    });
+}
+
 function didntGetStream(error) {
     alert(`Stream genaration failed: ${error} on ${window.navigator.userAgent}`);
 }
