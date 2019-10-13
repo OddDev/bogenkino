@@ -1,98 +1,107 @@
 <!doctype html>
 <html>
+
 <head>
-    <title>Bogenkino</title>
-    <!-- Include the volume meter component -->
-    <!-- Check ReadMe for credits -->
-    <script src="volume-meter.js"></script>
-    <script src="main.js"></script>
-    <script src="https://player.vimeo.com/api/player.js"></script>
-    <link rel="stylesheet" href="styles.css"></style>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <title>Bogenkino</title>
+  <!-- Include the volume meter component -->
+  <!-- Check ReadMe for credits -->
+  <script src="volume-meter.js"></script>
+  <script src="main.js"></script>
+  <script src="https://player.vimeo.com/api/player.js"></script>
+  <link rel="stylesheet" href="styles.css">
+  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+
 <body>
-    <link href="https://fonts.googleapis.com/css?family=Lobster|Bangers|Comfortaa" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S" crossorigin="anonymous">
-    
-    <div class="wrapper">
-      <div class="logo">
+  <link href="https://fonts.googleapis.com/css?family=Lobster|Bangers|Comfortaa" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css"
+    integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S" crossorigin="anonymous">
+
+  <div class="wrapper">
+    <div class="logo">
       <h1>Bogenkino</h1>
-        <div class="claim">"DIY Shooting Cinema"</div>
+      <div class="claim">"DIY Shooting Cinema"</div>
+    </div>
+    <div class="content">
+      <!-- <a>How it works</a> -->
+      <div class="step fix-max-width" id="enable-microphone">
+        <div>
+          <label>
+            <i class="fas fa-microphone"></i>
+            Start recording
+          </label>
+          <button onclick="chromeMicPermission()">
+            Enable Microphone
+          </button>
+        </div>
+        <div class="help-text right">
+          "If you see still see this button after you've allowed mic access in your browser, <span
+            class="highlight-text">press it</span>."
+        </div>
       </div>
-      <div class="content">
-        <!-- <a>How it works</a> -->
-        <div class="step fix-max-width" id="enable-microphone">
-          <div>
-            <label>
-                <i class="fas fa-microphone"></i>
-                Start recording
-            </label>
-            <button onclick="chromeMicPermission()">
-              Enable Microphone
-            </button>
-          </div>
-          <div class="help-text right">
-              "If you see still see this button after you've allowed mic access in your browser, <span class="highlight-text">press it</span>."
-            </div>
-        </div>
-        <div class="step" id="volume-bar">
-          <div class="indicator">
-            <label>
-                <i class="fas fa-microphone"></i>
-                Say something
-            </label>
-            <div class="level-wrapper bar">
-              <div class="level bar" id="level-bar">
-              </div>
-            </div>
-          </div>
-          <input type="range" id="thumb">
-    
-          <div class="help-text right">
-            "Move the <span class="highlight-text">slider</span> in order to set the volume-level which triggers the video to stop."
-          </div>
-        </div>
-        <div class="step fix-max-width">
-          <div class="video-concept-buttons">
-              <button id="vimeo-button" class="video-concept-button" onclick="onVideoConceptChange(event)">
-                Vimeo
-              </button>
-              <button id="file-button" class="video-concept-button disabled" onclick="onVideoConceptChange(event)">
-                File Upload
-              </button>
-          </div>
-          <div id="vimeo-concept" class="concept">
-            <label>
-              The <i class="fab fa-vimeo-v"></i>ideo to play
-              <input id="videoinput" placeholder="URL or ID of vimeo clip" type="text">
-            </label>
-            <div class="help-text left">
-              "Provide the URL or the ID of the Vimeo-Video you want to shoot at."
-            </div>
-          </div>
-          <div id="file-concept" class="concept disabled">
-            <label>
-              The offline video to play
-              <input type="file">
-            </label>
-            <div class="help-text left">
-              "Upload a video you want to shoot at from your local hard drive."
+      <div class="step" id="volume-bar">
+        <div class="indicator">
+          <label>
+            <i class="fas fa-microphone"></i>
+            Say something
+          </label>
+          <div class="level-wrapper bar">
+            <div class="level bar" id="level-bar">
             </div>
           </div>
         </div>
-        <button class="big-button" onclick="setVideo()">Start</button>
+        <input type="range" id="thumb">
+
+        <div class="help-text right">
+          "Move the <span class="highlight-text">slider</span> in order to set the volume-level which triggers the video
+          to stop."
+        </div>
       </div>
-      <div id="vimeo-video" class="video"></div>
-      <video controls loop id="html-video" class="video"></video>
-      <div class="footer">
-        <div class="imprint">
-            Imprint/Impressum: Kai Klostermann Gartenstraße 4 74549 Wolpertshausen bogenkino@fastmail.de
+      <div class="step fix-max-width">
+        <div class="video-concept-buttons">
+          <button id="vimeo-button" class="video-concept-button" onclick="onVideoConceptChange(event)">
+            Vimeo
+          </button>
+          <button id="file-button" class="video-concept-button disabled" onclick="onVideoConceptChange(event)">
+            File Upload
+          </button>
         </div>
-        <div class="general-information">(this is a very early verison)</div>
-        <div class="general-information">
-          🏹 bogenkino ❤️ OSS (<a href="https://github.com/OddDev/bogenkino" target="_blank">code on GitHub</a>)
+        <div id="vimeo-concept" class="concept">
+          <label>
+            The <i class="fab fa-vimeo-v"></i>ideo to play
+            <input id="videoinput" placeholder="URL or ID of vimeo clip" type="text">
+          </label>
+          <div class="help-text left">
+            "Provide the URL or the ID of the Vimeo-Video you want to shoot at."
+          </div>
         </div>
+        <div id="file-concept" class="concept disabled">
+          <label>
+            The offline video to play
+            <input type="file">
+          </label>
+          <div class="help-text left">
+            "Upload a video you want to shoot at from your local hard drive."
+          </div>
+        </div>
+      </div>
+      <button class="big-button" onclick="setVideo()">Start</button>
+    </div>
+    <div id="vimeo-video" class="video"></div>
+    <video controls loop id="html-video" class="video"></video>
+    <div class="footer">
+      <div class="imprint">
+        Imprint/Impressum: Kai Klostermann Gartenstraße 4 74549 Wolpertshausen bogenkino@fastmail.de
+      </div>
+      <div class="general-information">(this is a very early verison)</div>
+      <div class="general-information">
+        🏹 bogenkino ❤️ OSS (<a href="https://github.com/OddDev/bogenkino" target="_blank">code on GitHub</a>)
       </div>
     </div>
+  </div>
 </body>
+
 </html>
