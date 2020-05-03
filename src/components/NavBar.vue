@@ -7,7 +7,11 @@
     <div class="container">
       <div class="navbar-brand">
         <a class="navbar-item" href>
-          <img src="../assets/bogenkino_logo_full.png" />
+          <img
+            src="../assets/bogenkino_logo_full.png"
+            width="117"
+            height="28"
+          />
         </a>
 
         <a
@@ -50,14 +54,14 @@
 export default {
   data() {
     return {
-      isBurgerMenuExpanded: false,
+      isBurgerMenuExpanded: false
     };
   },
   methods: {
     toggleBurgerMenuState() {
       this.isBurgerMenuExpanded = !this.isBurgerMenuExpanded;
-    },
-  },
+    }
+  }
 };
 </script>
 
